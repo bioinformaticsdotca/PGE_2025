@@ -66,7 +66,15 @@ Idowu is a postdoctoral associate in the Guthrie Lab at the University of Wester
 
 #### Jennifer Guthrie
 
-More info coming soon
+<img src="./img/faculty/MISSINGHEADSHOT.PNG" width="200" alt="Photo of NAME">
+
+>JOB TITLE <br>
+INSTITUTION <br>
+LOCATION
+>
+> --- CONTACT INFO, IF PROVIDED
+
+BIO GOES HERE
 
 #### Charlie Barclay
 
