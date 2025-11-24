@@ -6,7 +6,7 @@
 
 ## Lecture
 
-Link to PDF of slides from google
+<iframe src="https://docs.google.com/presentation/d/1xo3GkRsSknSDbrBvffitktoa33cC3Sv-VgfjPJw-oLc/preview" width="640" height="480" allow="autoplay"></iframe>  
 
 ## Lab
 
