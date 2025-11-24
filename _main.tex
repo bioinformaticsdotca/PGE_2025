@@ -141,13 +141,13 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
-  pdftitle={IDE Module 5 Lab},
-  pdfauthor={Angela McLaughlin and Finlay Maguire},
+  pdftitle={Pathogen Genomic Epidemiology 2025},
+  pdfauthor={Faculty: Angela McLaughlin, Emma Griffiths, Finlay Maguire, Gary Van Domselaar, Idowu Olawoye, Jennifer Guthrie, Zhibin Lu, Charlie Barclay,},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
-\title{IDE Module 5 Lab}
-\author{Angela McLaughlin and Finlay Maguire}
+\title{Pathogen Genomic Epidemiology 2025}
+\author{Faculty: Angela McLaughlin, Emma Griffiths, Finlay Maguire, Gary Van Domselaar, Idowu Olawoye, Jennifer Guthrie, Zhibin Lu, Charlie Barclay,}
 \date{November 24-26, 2025}
 
 \begin{document}
@@ -212,8 +212,8 @@ Finlay Maguire is a genomic epidemiologist whose work centers on leveraging data
 \subsubsection{Gary Van Domselaar}\label{gary-van-domselaar}
 
 \begin{quote}
-Chief, Bioinformatics, National Microbiology Laboratory
-Public Health Agency of Canada
+Associate Professor
+University of Manitoba
 Winnipeg, MB, Canada
 
 --- \href{mailto:gary.vandomselaar@phac-aspc.gc.ca}{\nolinkurl{gary.vandomselaar@phac-aspc.gc.ca}}
@@ -281,9 +281,359 @@ Coming soon!
 
 \section{Lab}\label{lab}
 
-\subsection{Data Download}\label{data-download}
+\emph{Author: Emma Griffiths and Charlie Barclay}
 
-\href{https://drive.google.com/file/d/1mfLHfzPVOA6avBEoFhiAsIMfXuBrIMQp/view}{dataharmonizer}
+\emph{Last Modified: 2025-11-23}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \hyperref[intro1]{Overview}
+\item
+  \hyperref[exercise1]{Part 1: Exploring data heterogeneity across repositories}
+\item
+  \hyperref[exercise2]{Part 2: DataHarmonizer demonstration}
+\item
+  \hyperref[exercise3]{Part 3: Curation using the DataHarmonizer}
+\item
+  \hyperref[exercise4]{Part 4: EBI OLS}
+\end{enumerate}
+
+\subsection{Background}\label{intro1}
+
+High quality contextual data (often described as metadata) is essential for genomic epidemiology workflows from MLST and cgMLST profiling to clustering, phylogenetics, and outbreak interpretation. While public repositories can be a useful source in identifying data, the associated contextual data is often heterogeneous, inconsistent or incomplete and analytical tools rely on standardised inputs to produce reliable results.
+
+The PGE Data curation and sharing lab is designed to give participants hands-on experience using curation methods and standardisation tools to prepare real-world datasets for downstream analysis. Across the integrated exercises, participants will explore repository variation, learn how to structure and validate contextual data using the DataHarmonizer, curate three datasets for use in later modules, and apply ontologies to ensure terminological consistency across sources.
+
+The session emphasizes reproducibility, interoperability, and the role of contextual data standards in ensuring robust genomic analysis.
+
+The lab experience is divided into four parts that consist of:
+
+\begin{itemize}
+\tightlist
+\item
+  An \textbf{exploratory exercise} to review the content and structure of contextual data within public repository records (NCBI and BV-BRC).
+\item
+  A \textbf{demonstration} of a data curation and validation tool called the \textbf{DataHarmonizer}.
+\item
+  A \textbf{data curation} exercise where participants practice interpreting and structuring three contextual datasets, to create analysis-ready contextual data for later modules in the workshop series.
+\item
+  An \textbf{ontology search exercise} using the EBI OLS to look up standardised ontology equivalents for selected terms to build their own controlled vocabulary list to improve semantic consistency.
+\end{itemize}
+
+\subsection{Exploring data heterogeneity across repositories}\label{exercise1}
+
+\textbf{Aim:} To observe and compare how contextual; data for the same bacterial samples (MRSA) are represented in two public repositories, BV-BRC and NCBI BioSample, and to identify inconsistencies that affect downstream analyses such as pathogen identification, outbreak investigation, and phylodynamics.
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{https://github.com/cbarcl01/PGE_2025/blob/main/img/module1/BVBRC_filter.gif}}
+\caption{BVBRC\_filter}
+\end{figure}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Access the repository: BV-BRC \href{https://www.bv-brc.org/}{Bacterial and Viral Bioinformatics Resource Center}
+\item
+  Use the search dropdown to select \emph{Genomes} and type \emph{Staphylococcus aureus} into the search bar.
+\item
+  Filter your seach for:
+
+  \begin{enumerate}
+  \def\labelenumii{\roman{enumii}.}
+  \tightlist
+  \item
+    \textbf{Keywords:} MRSA
+  \item
+    \textbf{Collection year:} 2009
+  \item
+    \textbf{Isolation country:} Australia
+  \end{enumerate}
+\end{enumerate}
+
+Answer: 41. If you look at the bottom of the page you should see \textbf{1 - 41 of 41 results} (correct as of 23rd November)
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Click on collection year again to remove the filter. Instead filter by 2004
+\item
+  Select the second record \textbf{Staphylococcus aureus strain JKD6004}.
+\item
+  Review the details pane to identify the contextual information including the BioSample accession number.
+\item
+  Review the same sample in NCBI BioSample repository:
+
+  \begin{enumerate}
+  \def\labelenumii{\roman{enumii}.}
+  \tightlist
+  \item
+    In the details pane, follow the link to the appropriate BioSample.
+  \item
+    Alternatively, copy the accession number (e.g., SAMN12345678 or equivalent) from the BV-BRC record and paste it into the NCBI BioSample search bar.
+  \end{enumerate}
+\item
+  Compare contextual data fields between the two repositories.
+\end{enumerate}
+
+\textbf{Tip: Public Repositories Are Not Standards}
+
+You may notice that the same sample looks different between BV-BRC and NCBI.
+
+This is expected --- \textbf{repositories store records as they were submitted}, and those submissions often use inconsistent formats, missing fields, or non-standard terminology.
+
+This is why we need curation + standards \textbf{before} analysis, even when using ``trusted'' databases.
+
+\subsection{DataHarmonizer demonstration}\label{exercise2}
+
+The \textbf{DataHarmonizer} is a spreadsheet based validation tool which facilitates the application of data standards. The instructor will provide a brief overview of the DataHarmonizer tool, with examples of how to enter, validate and transform data for repository submission.
+
+To complete the curation exercises participants can use a test version of the DataHarmonizer, with templates designed for this course. Participants can find the test version of the DataHarmonizer on their student instances under module1. The tool will need extracting prior to use.
+
+\pandocbounded{\includegraphics[keepaspectratio]{img/module1/dh_extract.gif}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Download and unzip the DataHarmonizer
+
+  \begin{enumerate}
+  \def\labelenumii{\roman{enumii}.}
+  \tightlist
+  \item
+    Go to your workspace at \url{http://\#\#.uhn-hpc.ca/} \emph{replace the \#\# with your student number}
+  \item
+    Navigate into the folder CourseData/module1
+  \item
+    Download the provided dataharmonizer.zip
+  \item
+    Extract (unzip) the folder to a location on your computer where you can easily find it.
+  \end{enumerate}
+\item
+  Open the DataHarmonizer: Inside the extracted folder, navigate to dist → index.html. Double click index.html to open the tool.
+\item
+  Follow along with the demonstration. The instructor will:
+
+  \begin{enumerate}
+  \def\labelenumii{\roman{enumii}.}
+  \tightlist
+  \item
+    Introduce the interface including layout, menus and the validation feature.
+  \item
+    Explain how the templates encode standards e.g.~how the required vs recommended fields are indicated.
+  \item
+    Demonstrate entering data into a few fields.
+  \item
+    Show the data after `validation'.
+  \end{enumerate}
+\end{enumerate}
+
+Note that in the address bar, the local address for the app is stored. The application is local to your machine and no data is shared online.
+
+\textbf{Alternative link:} If unable to download through your student instance then you can download the \href{https://drive.google.com/uc?export=download&id=1mfLHfzPVOA6avBEoFhiAsIMfXuBrIMQp}{dataharmonizer.zip}. Unzip the folder and open the interface by going to the dist folder and navigating to `main.html'.
+
+\subsection{Curation using the DataHarmonizer}\label{exercise3}
+
+In this exercise, participants will curate three datasets that will be reused in subsequent workshop modules (pathogen typing, outbreak analysis, and phylodynamics). The aim is to experience practical data cleaning and validation within the DataHarmonizer.
+
+\subsubsection{3.1 Curating MRSA data using a One Health AMR data standard}\label{curating-mrsa-data-using-a-one-health-amr-data-standard}
+
+The dataset originates from Bacterial and Viral Bioinformatics Resource Center (BV-BRC) contextual data for Methicillin-resistant Staphylococcus aureus (MRSA) isolates that will be run through chewBBACA for cgMLST allele calling and clustering in a later module. Before running those analyses, participants must ensure the contextual data is properly cleaned and standardised.
+
+\pandocbounded{\includegraphics[keepaspectratio]{img/module1/BVBRC_filter.gif}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Locate and download the \textbf{3-1\_MRSA\_AUS\_curation.csv} dataset - this can be found at \emph{\url{http://\#\#.uhn-hpc.ca/module1/MRSA_data}} (replace the \#\# with your student number).
+\item
+  Open the \textbf{OneHealthCBW} template from the template dropdown.
+\item
+  Review the prioritized information and the mapping schema provided by the instructor (included below).
+\item
+  Enter the information in the DataHarmonizer template according to the mapping, using the drop down menus where appropriate.
+
+  \begin{enumerate}
+  \def\labelenumii{\roman{enumii}.}
+  \tightlist
+  \item
+    Start with record \textbf{1280\_21138} (this should be the first record in the dataset).
+  \item
+    Curate as many records as you can in the given time.
+  \end{enumerate}
+\item
+  Check your curated data against the answer key provided in the Module 1 folder.
+\end{enumerate}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+BV-BRC Field
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+OneHealthCBW Module
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+OneHealthCBW Field
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Genome ID & Database identifiers & BV-BRC genome ID \\
+MLST & Genotyping information & genotyping method \\
+Contigs & Bioinformatics and QC metrics & number of contigs \\
+Size & Bioinformatics and QC metrics & sequence assembly length \\
+CDS & Bioinformatics and QC metrics & number of coding sequences (CDS) \\
+Isolation source & Sample collection and processing & anatomical material \\
+Collection Date & Sample collection and processing & sample collection date \\
+Isolation Country & Sample collection and processing & geo\_loc name (country) \\
+Host Common Name & Host information & host (common name) \\
+\end{longtable}
+
+\textbf{Additional resources:} Participants interested in curating their own data using the DataHarmonizer after the course are welcome to download the full tool at \url{https://github.com/cidgoh/pathogen-genomics-package/}.
+
+To do so, navigate to the releases page and under the most recent release go to the source code. Download the zip file appropriate for your operating system. Extract the files and continue as before.
+
+\subsubsection{3.2 Validating MRSA outbreak data}\label{validating-mrsa-outbreak-data}
+
+In this scenario a patient in a hospital was found to be suffering from a foot wound with painful pus-filled sores as well as pneumonia-like symptoms. PCR and culture-based antimicrobial phenotypic testing indicated that the patient was infected with MRSA. Other patients in the hospital were also found to have similar infections in the same week. The data suggested that an outbreak was occurring and so outbreak investigation protocols were triggered. Isolates were sequenced and clusters characterized as part of the evidence used in the investigation.
+
+In order to run the outbreak analyses we need to clean the contextual data. A `dirty' dataset with known contextual data issues is provided. We will open this data in the DataHarmonizer and use the validation feature to tidy this ready for analysis.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Locate and download the \textbf{3-2\_MRSA\_outbreak.csv} dataset - this can be found at \emph{\url{http://\#\#.uhn-hpc.ca/module1/MRSA_data}} (replace the \#\# with your student number).
+\item
+  Reset your view by going to File -\textgreater{} New and select `Clear' if you see a pop requesting asking if you would like to clear existing data.
+\item
+  Open the downloaded dataset for cleaning: Go to File -\textgreater{} Open -\textgreater{} Choose downloaded file
+\item
+  Explore the fields. Note what types of fields are populated. Are there any others you think may be useful for future analysis?
+\item
+  Press validate to check for errors and resolve any found.
+
+  \begin{enumerate}
+  \def\labelenumii{\roman{enumii}.}
+  \tightlist
+  \item
+    Use the `Next error' button to navigate through checking for any errors (highlighted in red).
+  \item
+    Apply corrections, focusing on invalid date formats, geographical locations.
+  \item
+    Once you have fixed all errors press `validate' again. The `Next error' button should disappear.
+  \end{enumerate}
+\end{enumerate}
+
+\subsubsection{3.3 Curating SARS-CoV-2 data for phylodynamics analysis}\label{curating-sars-cov-2-data-for-phylodynamics-analysis}
+
+This SARS-CoV-2 dataset is designed for downstream phylodynamics (molecular clock, growth rate estimation, spatiotemporal reconstruction).These analyses require precise and \textbf{complete dates} and \textbf{geographical resolution} hence, careful contextual data curation is essential.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Locate and download the \textbf{3-3\_SC2\_datesUK\_small.csv} dataset - this can be found at \emph{\url{http://\#\#.uhn-hpc.ca/module1/SC2_B117_data}} (replace the \#\# with your student number).
+\item
+  For this curation exercise, we need to use a different standard. Switch to the correct template by using the template dropdown and selecting \textbf{SC2CBW}.
+\item
+  Review the prioritised information and the mapping schema provided by the instructor (included in the table below).
+\item
+  In the data identify Enter the information from the record w in the DataHarmonizer template according to the mapping, using the drop down menus where appropriate.
+\item
+  Check your curated data against the \textbf{3-3\_SC2\_small\_cleaned.csv} answer key provided in the Module 1 folder.
+\end{enumerate}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Original Field
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+SC2CBW Module
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+SC2 Field
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Sequence name & Bioinformatics and QC metrics & consensus sequence name \\
+Accession & Database identifiers & INSDC assembly accession \\
+Organism name & Sample collection and processing & number of contigs \\
+Pangolin & Lineage and Variant information & lineage/clade name \\
+PangoVersions & Lineage and Variant information & lineage/clade analysis software name; lineage/clade analysis software version \\
+Length & Bioinformatics and QC metrics & sequence assembly length \\
+Geo-Location & Sample collection and processing & geo\_loc name (country); geo\_loc name (state/province/territory); geo\_loc name (city) \\
+Host & Host information & host (scientific name) \\
+Tissue Specimen Source & Sample collection and processing & anatomical part \\
+Collection Date & Sample collection and processing & sample collection date \\
+\end{longtable}
+
+\textbf{Tip: Template Selection Matters}
+Each template encodes a \emph{different} data standard.\\
+If something looks ``wrong'' --- missing fields, unexpected picklists, validation errors --- \textbf{double-check that you are using the correct template} in the top-right dropdown.
+
+\subsection{Using EBI OLS to identify controlled vocabulary}\label{exercise4}
+
+Identifying standardised terms is key for developing interoperable standards. The EBI's ontology look-up service (OLS) is an important tool for searching, comparing, and evaluating available vocabulary in different thesauri and ontologies.
+
+Participants will use the lessons and guidance from the lecture component of the lab to identify standardized terms using OLS for capturing the descriptive text provided in the exercise.
+
+Open the link for the \href{https://www.ebi.ac.uk/ols4/}{EBI-OLS website} in any browser. Create the following chart in a text editor:
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+Description & Standardized label & Ontology ID \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Inner lining of the cheek & & \\
+Sample collection method - saline mouth rinse & & \\
+BAL lung fluid collection & & \\
+garbanzo bean & & \\
+\end{longtable}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Enter one of the descriptors provided in the OLS search bar and press Search.
+\item
+  Examine the list of hits that appear, and consider the following when selecting the best match:
+
+  \begin{enumerate}
+  \def\labelenumii{\roman{enumii}.}
+  \tightlist
+  \item
+    The definition
+  \item
+    The granularity of the suggested term
+  \item
+    The domain of the source ontology
+  \item
+    Reuse of the term in different ontologies
+  \end{enumerate}
+\item
+  Select the best match and capture the standardized label, the ontology ID, and the term definition in the chart.
+\end{enumerate}
+
+\pandocbounded{\includegraphics[keepaspectratio]{img/module1/ebiols.gif}}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \chapter{Module 2 Emerging Pathogen Detection and Identification}\label{module-2-emerging-pathogen-detection-and-identification}
 
@@ -1644,17 +1994,15 @@ ggsave("Threshold25_clusters.pdf", plot = final_plot, height = 10, width = 8, de
 
 \section{Lecture}\label{lecture-3}
 
-Link to PDF of slides from google
-
 \section{Lab}\label{lab-3}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  \hyperref[intro]{Background}
+  \hyperref[intro1]{Background}
 \item
-  \hyperref[setup]{Setup}
+  \hyperref[setup1]{Setup}
 \item
   \hyperref[cluster]{Cluster Identification}
 \item
@@ -1683,7 +2031,7 @@ This practical will step you through the genomic components of a typical nosocom
   Performing transmission inference
 \end{itemize}
 
-\subsection{Background}\label{background}
+\subsection{Background}\label{intro1}
 
 \emph{Staphylococcus aureus} is a Gram-positive coccoidal bacteria that forms a normal commensal member of the microbiome in 20-40\% of people (\href{https://doi.org/10.1016/j.ijmm.2016.11.007}{Karsten, 2017}). However, when skin and mucosal barriers are disrupted (e.g., through medical procedures such as catheterisation, tracheal tubes, surgeries) \emph{S. aureus} can cause opportunistic invasive infections (\href{https://doi.org/10.1038/nrdp.2018.33}{Lee, 2018}).
 
@@ -1697,7 +2045,7 @@ They have performed a systematic review of all MRSA isolates from the SCBU/NICU 
 
 You are a clinical bioinformatician who has been asked to support the investigation and analyses these genomes
 
-\subsection{Set-Up}\label{set-up}
+\subsection{Set-Up}\label{setup1}
 
 This lab practical will involve running the following software:
 
@@ -1798,7 +2146,7 @@ Similar to yesterday, we will want to either use the assigned hostname (e.g., xx
 
 This should print a number like XX.XX.XX.XX. Once you have your address, try going to \url{http://xx.uhn-hpc.ca} or \url{http://IP-ADDRESS} and clicking the link for \textbf{module4}. This page will be referred to later to easily download/view some of our output files.
 
-\subsection{Cluster Identification}\label{cluster-identification}
+\subsection{Cluster Identification}\label{cluster}
 
 All isolates that are putatively linked to the outbreak have been done so on the basis of time, location, and phenotype (specifically antibiotic susceptibilities). However, just because 2 isolates have the same resistance pattern does not mean they are closely related.
 Although this is a relatively small set of isolates we are often evaluating very large numbers of genomes for their potential connection to an outbreak.
@@ -1881,7 +2229,7 @@ P27-28 are assigned to cluster 1 and P30-33 are assigned cluster 12. Remaining s
 
 We can't be sure about cluster 3 without further analysis but we can drop cluster 1 and 12 for now.
 
-\subsection{SNP Analysis}\label{snp-analysis}
+\subsection{SNP Analysis}\label{snp}
 
 Now that we have eliminated some isolates that are unlikely to be connected to our main outbreak we can do a deeper analysis of the evolutionary relationships between our isolates. For this we are going to perform a phylogenetic analysis. There are several way this could be done:
 
@@ -1992,7 +2340,7 @@ Now we have refined our final set of suspected outbreak isolates we can create o
 
 A pre-computed distance matrix and phylogeny can be copied from \texttt{\textasciitilde{}/CourseData/module4/refined\_outbreak\_matrix.csv} and \texttt{\textasciitilde{}/CourseData/module4/refined.gubbins.masked.aln.treefile}
 
-\#\#\# Transmission Inference
+\subsection{Transmission Inference}\label{trans}
 
 With our refined outbreak distance matrix and phylogeny we are going to perform some transmission analyses by combining these with some of our context data.
 
@@ -2026,6 +2374,8 @@ However, this would require us to infer a time-scaled phylogeny and you'll disco
 
 \section{Lab}\label{lab-4}
 
+Author: Angela McLaughlin and Finlay Maguire
+
 \subsection{Table of contents}\label{table-of-contents}
 
 \begin{enumerate}
@@ -2049,7 +2399,7 @@ However, this would require us to infer a time-scaled phylogeny and you'll disco
 
 \subsection{1. Introduction}\label{introduction-1}
 
-\subsubsection{1.1. Background}\label{background-1}
+\subsubsection{1.1. Background}\label{background}
 
 SARS-CoV-2 Pango lineage B.1.1.7 \href{https://www.nature.com/articles/s41564-020-0770-5}{(Rambaut et al.~2020)} was the first officially designated variant of concern (VOC) by the World Health Organization \href{https://www.nature.com/articles/s41564-021-00932-w}{(Konings et al.~2021)}, due to its increased transmissibility compared to other circulating lineages. Although B.1.1.7 was discovered in December 2020, it originated in the months preceding that. For a more thorough investigation into the circumstances of B.1.1.7 discovery and emergence, see \href{https://academic.oup.com/ve/article/8/2/veac080/6677185}{(Hill et al., 2022)} on ``The origins and molecular evolution of SARS-CoV-2 lineage B.1.1.7 in the UK''.
 
