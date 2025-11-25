@@ -184,7 +184,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="module-1-data-curation-and-data-sharing.html"><a href="module-1-data-curation-and-data-sharing.html#lecture"><i class="fa fa-check"></i>Lecture</a></li>
 <li class="chapter" data-level="" data-path="module-1-data-curation-and-data-sharing.html"><a href="module-1-data-curation-and-data-sharing.html#lab"><i class="fa fa-check"></i>Lab</a>
 <ul>
-<li class="chapter" data-level="" data-path="module-1-data-curation-and-data-sharing.html"><a href="module-1-data-curation-and-data-sharing.html#intro1"><i class="fa fa-check"></i>Background</a></li>
+<li class="chapter" data-level="" data-path="module-1-data-curation-and-data-sharing.html"><a href="module-1-data-curation-and-data-sharing.html#intro2"><i class="fa fa-check"></i>Background</a></li>
 <li class="chapter" data-level="" data-path="module-1-data-curation-and-data-sharing.html"><a href="module-1-data-curation-and-data-sharing.html#exercise1"><i class="fa fa-check"></i>Exploring data heterogeneity across repositories</a></li>
 <li class="chapter" data-level="" data-path="module-1-data-curation-and-data-sharing.html"><a href="module-1-data-curation-and-data-sharing.html#exercise2"><i class="fa fa-check"></i>DataHarmonizer demonstration</a></li>
 <li class="chapter" data-level="" data-path="module-1-data-curation-and-data-sharing.html"><a href="module-1-data-curation-and-data-sharing.html#exercise3"><i class="fa fa-check"></i>Curation using the DataHarmonizer</a></li>
@@ -220,7 +220,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="module-4-outbreak-analysis.html"><a href="module-4-outbreak-analysis.html#lecture-3"><i class="fa fa-check"></i>Lecture</a></li>
 <li class="chapter" data-level="" data-path="module-4-outbreak-analysis.html"><a href="module-4-outbreak-analysis.html#lab-3"><i class="fa fa-check"></i>Lab</a>
 <ul>
-<li class="chapter" data-level="" data-path="module-1-data-curation-and-data-sharing.html"><a href="module-1-data-curation-and-data-sharing.html#intro1"><i class="fa fa-check"></i>Background</a></li>
+<li class="chapter" data-level="" data-path="module-4-outbreak-analysis.html"><a href="module-4-outbreak-analysis.html#intro1"><i class="fa fa-check"></i>Background</a></li>
 <li class="chapter" data-level="" data-path="module-4-outbreak-analysis.html"><a href="module-4-outbreak-analysis.html#setup1"><i class="fa fa-check"></i>Set-Up</a></li>
 <li class="chapter" data-level="" data-path="module-4-outbreak-analysis.html"><a href="module-4-outbreak-analysis.html#cluster"><i class="fa fa-check"></i>Cluster Identification</a></li>
 <li class="chapter" data-level="" data-path="module-4-outbreak-analysis.html"><a href="module-4-outbreak-analysis.html#snp"><i class="fa fa-check"></i>SNP Analysis</a></li>
@@ -283,14 +283,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><em>Author: Emma Griffiths and Charlie Barclay</em></p>
 <p><em>Last Modified: 2025-11-23</em></p>
 <ol style="list-style-type: decimal">
-<li><a href="module-1-data-curation-and-data-sharing.html#intro1">Overview</a></li>
+<li><a href="module-1-data-curation-and-data-sharing.html#intro2">Overview</a></li>
 <li><a href="module-1-data-curation-and-data-sharing.html#exercise1">Part 1: Exploring data heterogeneity across repositories</a></li>
 <li><a href="module-1-data-curation-and-data-sharing.html#exercise2">Part 2: DataHarmonizer demonstration</a></li>
 <li><a href="module-1-data-curation-and-data-sharing.html#exercise3">Part 3: Curation using the DataHarmonizer</a></li>
 <li><a href="module-1-data-curation-and-data-sharing.html#exercise4">Part 4: EBI OLS</a></li>
 </ol>
-<div id="intro1" class="section level3 hasAnchor">
-<h3>Background<a href="module-1-data-curation-and-data-sharing.html#intro1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="intro2" class="section level3 hasAnchor">
+<h3>Background<a href="module-1-data-curation-and-data-sharing.html#intro2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>High quality contextual data (often described as metadata) is essential for genomic epidemiology workflows from MLST and cgMLST profiling to clustering, phylogenetics, and outbreak interpretation. While public repositories can be a useful source in identifying data, the associated contextual data is often heterogeneous, inconsistent or incomplete and analytical tools rely on standardised inputs to produce reliable results.</p>
 <p>The PGE Data curation and sharing lab is designed to give participants hands-on experience using curation methods and standardisation tools to prepare real-world datasets for downstream analysis. Across the integrated exercises, participants will explore repository variation, learn how to structure and validate contextual data using the DataHarmonizer, curate three datasets for use in later modules, and apply ontologies to ensure terminological consistency across sources.</p>
 <p>The session emphasizes reproducibility, interoperability, and the role of contextual data standards in ensuring robust genomic analysis.</p>
@@ -306,8 +306,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3>Exploring data heterogeneity across repositories<a href="module-1-data-curation-and-data-sharing.html#exercise1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Aim:</strong> To observe and compare how contextual; data for the same bacterial samples (MRSA) are represented in two public repositories, BV-BRC and NCBI BioSample, and to identify inconsistencies that affect downstream analyses such as pathogen identification, outbreak investigation, and phylodynamics.</p>
 <div class="float">
-<img src="https://github.com/cbarcl01/PGE_2025/blob/main/img/module1/BVBRC_filter.gif" alt="BVBRC_filter" />
-<div class="figcaption">BVBRC_filter</div>
+<img src="https://github.com/cbarcl01/PGE_2025/blob/main/img/module1/BVBRC_filter.gif" alt="BVBRC_filter.gif" />
+<div class="figcaption">BVBRC_filter.gif</div>
 </div>
 <ol style="list-style-type: decimal">
 <li>Access the repository: BV-BRC <a href="https://www.bv-brc.org/">Bacterial and Viral Bioinformatics Resource Center</a></li>

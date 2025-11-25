@@ -12,13 +12,13 @@
 *Last Modified: 2025-11-23*
 
 
-1. [Overview](#intro1)
+1. [Overview](#intro2)
 2. [Part 1: Exploring data heterogeneity across repositories](#exercise1)
 3. [Part 2: DataHarmonizer demonstration](#exercise2)
 4. [Part 3: Curation using the DataHarmonizer](#exercise3)
 5. [Part 4: EBI OLS](#exercise4)
 
-### Background {#intro1}
+### Background {#intro2}
 
 High quality contextual data (often described as metadata) is essential for genomic epidemiology workflows from MLST and cgMLST profiling to clustering, phylogenetics, and outbreak interpretation. While public repositories can be a useful source in identifying data, the associated contextual data is often heterogeneous, inconsistent or incomplete and analytical tools rely on standardised inputs to produce reliable results.
 
@@ -38,7 +38,7 @@ The lab experience is divided into four parts that consist of:
 
 **Aim:** To observe and compare how contextual; data for the same bacterial samples (MRSA) are represented in two public repositories, BV-BRC and NCBI BioSample, and to identify inconsistencies that affect downstream analyses such as pathogen identification, outbreak investigation, and phylodynamics.
 
-![BVBRC_filter](https://github.com/cbarcl01/PGE_2025/blob/main/img/module1/BVBRC_filter.gif)
+![BVBRC_filter.gif](https://github.com/cbarcl01/PGE_2025/blob/main/img/module1/BVBRC_filter.gif)
 
 1. Access the repository: BV-BRC [Bacterial and Viral Bioinformatics Resource Center](https://www.bv-brc.org/)
 2. Use the search dropdown to select *Genomes* and type *Staphylococcus aureus* into the search bar.
