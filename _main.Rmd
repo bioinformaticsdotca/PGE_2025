@@ -2306,6 +2306,8 @@ ptree<-ptreeFromPhylo(ttree,dateLastSample=max(dates))
 
 ## Lecture
 
+<iframe src=https://drive.google.com/file/d/19QLjoM7mN9wYoXiwXRWtL7M2X8gdgVyZ/preview" width="640" height="480" allow="autoplay"></iframe>  
+
 
 ## Lab
 
