@@ -20,10 +20,6 @@ favicon: img/favicon.ico
 
 Welcome to the 2025 Pathogen Genomic Epidemiology Canadian Bioinformatics Workshop webpage!  
 
-## Pre-work
-
-<!--[You can find your pre-work here.](LINK TO PREWORK)-->
-
 ## Class Photo
 
 <img src="./img/classphoto.png" width="600" alt="Photo of class"> 
