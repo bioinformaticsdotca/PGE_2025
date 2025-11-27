@@ -26,7 +26,7 @@ Welcome to the 2025 Pathogen Genomic Epidemiology Canadian Bioinformatics Worksh
 
 ## Class Photo
 
-Coming soon! 
+<img src="./img/classphoto.png" width="600" alt="Photo of class"> 
 
 ## Schedule
 
@@ -348,3 +348,17 @@ schedule_component <- tagList(
 # 7. Output the final component
 schedule_component
 ```
+
+## AWS Setup Instructions
+
+Note that some of these files are quite large. If you have issues downloading them, try copying the link address, opening a new blank tab, and entering the URL into the new tab’s address bar. If that fails, contact us at info@bioinformatics.ca.
+
+AWS Region: us-east-1 (N. Virgina) <br> 
+AMI name: CBW_PGE_251121 <br>
+AMI ID: ami-0f0e387c5bdd89771 <br>
+
+https://hpc4health.ca/cbw/2025/PGE/PGE_module1.tar
+https://hpc4health.ca/cbw/2025/PGE/PGE_module2.tar
+https://hpc4health.ca/cbw/2025/PGE/PGE_module3.tar
+https://hpc4health.ca/cbw/2025/PGE/PGE_module4.tar
+https://hpc4health.ca/cbw/2025/PGE/PGE_module5.tar
