@@ -4,6 +4,8 @@
 
 *Last Modified: 2025-11-11*
 
+<iframe width="640" height="360" src="https://www.youtube.com/embed/ckeCrwYNWpE?si=nxz6O9BZ-Thh21LF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Lecture
 
 <iframe src="https://docs.google.com/presentation/d/1xo3GkRsSknSDbrBvffitktoa33cC3Sv-VgfjPJw-oLc/preview" width="640" height="480" allow="autoplay"></iframe>  

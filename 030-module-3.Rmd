@@ -1,5 +1,7 @@
 # Module 3 Pathogen Typing
 
+<iframe width="640" height="360" src="https://www.youtube.com/embed/AWombALFocw?si=eZaPNfOPcvTW11dE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Lecture
 
 <iframe src="https://drive.google.com/file/d/1ipyyA4_jw3RyWguB5_oDWDABJva_ha33/preview" width="640" height="380" allow="autoplay"></iframe>  
